@@ -66,6 +66,7 @@ static const char *volmute[] = { "amixer", "-D", "pulse", "sset", "Master", "tog
 static const char *volup[] = { "amixer", "-D", "pulse", "sset", "Master", "5%+", NULL };
 static const char *voldown[] = { "amixer", "-D", "pulse", "sset", "Master", "5%-", NULL };
 static const char *lock[] = { "xsecurelock", NULL };
+static const char *screengrab[] = { "maim", "-s", "-u", "|", "xclip", "-selection", "clipboard", "-t", "image/png", "-i", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -108,6 +109,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioRaiseVolume, spawn, {.v = volup } },
 	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = voldown } },
 	{ MODKEY|ShiftMask,             XK_Delete, spawn,          {.v = lock } },
+	{ MODKEY|ShiftMask,                       XK_s,      spawn,          {.v = screengrab } },
 };
 
 /* button definitions */
