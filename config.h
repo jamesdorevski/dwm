@@ -60,11 +60,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *brightnessup[] = { "light", "-A", "10", NULL };
-static const char *brightnessdown[] = { "light", "-U", "10", NULL };
-static const char *volmute[] = { "amixer", "-D", "pulse", "sset", "Master", "toggle", NULL };
-static const char *volup[] = { "amixer", "-D", "pulse", "sset", "Master", "5%+", NULL };
-static const char *voldown[] = { "amixer", "-D", "pulse", "sset", "Master", "5%-", NULL };
+static const char *brightnessup[] = { "light", "-A", "5", NULL };
+static const char *brightnessdown[] = { "light", "-U", "5", NULL };
+static const char *volmute[] = { "amixer", "sset", "Master", "toggle", NULL };
+static const char *volup[] = { "amixer", "sset", "Master", "5%+", NULL };
+static const char *voldown[] = { "amixer", "sset", "Master", "5%-", NULL };
 static const char *lock[] = { "xsecurelock", NULL };
 static const char *screengrab[] = { "maim", "-s", "-u", "|", "xclip", "-selection", "clipboard", "-t", "image/png", "-i", NULL };
 
